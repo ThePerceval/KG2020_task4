@@ -6,6 +6,7 @@ import java.awt.*;
 public class GUI extends JFrame{
     private JPanel panel1;
     private DrawPanel drawPanel;
+<<<<<<< HEAD
     private JComboBox comboBox3;
     private JComboBox comboBox4;
     private JTextField textField3;
@@ -13,6 +14,8 @@ public class GUI extends JFrame{
     private JButton button3;
     private JButton button4;
     private JButton применитьButton;
+=======
+>>>>>>> initial commit
 
     public GUI() throws HeadlessException {
         setContentPane(panel1);
