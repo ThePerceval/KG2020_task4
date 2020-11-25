@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Sphere extends IModel{
     private double R;
     private Vector3 center;
-    private double k1, k2, k3;
+    
     public Sphere(Vector3 center, double r, Color color, int specular, float reflective) {
         R = r;
         this.center = center;
