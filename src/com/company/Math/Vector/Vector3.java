@@ -1,24 +1,22 @@
-package com.company.Primitive;
+package com.company.Math.Vector;
 
 public class Vector3 {
-    private double x, y, z;
+    private double[] values;
 
     public Vector3(double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        values = new double[]{x, y, z};
     }
 
     public double getX() {
-        return x;
+        return values[0];
     }
 
     public double getY() {
-        return y;
+        return values[1];
     }
 
     public double getZ() {
-        return z;
+        return values[2];
     }
 
     public static Vector3 multiVector(Vector3 a, Vector3 b){
@@ -26,6 +24,8 @@ public class Vector3 {
     }
 
     public static Vector3 multiplication(Vector3 a, double k){
+        if(a.getX() == -0.5 && a.getY() == 0)
+            System.out.println(true);
         return new Vector3(a.getX() * k, a.getY() * k,a.getZ() * k);
     }
 
@@ -50,5 +50,9 @@ public class Vector3 {
 
     public static double length(Vector3 vector){
         return Math.sqrt(Math.pow(vector.getX(), 2) + Math.pow(vector.getY(), 2) + Math.pow(vector.getZ(), 2));
+    }
+
+    public static Vector3 reflectRay(Vector3 R, Vector3 N){
+        return Vector3.subtraction(Vector3.multiplication(Vector3.multiplication(N,2), Vector3.dot(N, R)), R);
     }
 }
